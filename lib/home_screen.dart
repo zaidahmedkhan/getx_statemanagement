@@ -19,18 +19,39 @@ class _HomeScreenState extends State<HomeScreen> {
         )),
       ),
       body: Column(
-        children: [],
+        children: [
+          Card(
+            child: ListTile(
+              title: const Text("Getx Dialog Alert"),
+              subtitle: const Text("Dualog alert with getx"),
+              onTap: () {
+                Get.defaultDialog(
+                    title: "Delete chat",
+                    titlePadding: const EdgeInsets.only(top: 20),
+                    contentPadding: const EdgeInsets.all(20),
+                    // middleText: "Are you sure you want to delete this chat?",
+                    textConfirm: "yes",
+                    textCancel: "no",
+                    content: Column(
+                      children: const [
+                        Text("cancel"),
+                        Text("cancel"),
+                        Text("cancel"),
+                        Text("cancel"),
+                        Text("cancel"),
+                        Text("cancel"),
+                        Text("cancel"),
+                        Text("cancel"),
+                        Text("cancel"),
+                        Text("cancel"),
+                      ],
+                    ));
+              },
+            ),
+          )
+        ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Get.snackbar("Zaid", "learning flutter!",
-            snackPosition: SnackPosition.BOTTOM,
-            backgroundColor: Colors.yellow,
-            icon: const Icon(Icons.logo_dev));
-
-        // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        //     content: Title(
-        //         color: Colors.black, child: Text("zaid is learning flutter"))));
-      }),
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
     );
   }
 }
